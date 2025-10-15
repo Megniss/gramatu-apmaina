@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Grāmatu apmaiņas sistēma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- ===== Modal popup ===== -->
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="close" aria-label="Aizvērt modal">&times;</button>
+    <img id="modal-img" src="" alt="" />
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+  </div>
+</div>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">Grāmatu apmaiņa</h1>
+
+      <!-- Hamburger -->
+      <button id="hamburger" class="hamburger" aria-label="Atvērt izvēlni">☰</button>
+
+      <nav class="main-nav" aria-label="Galvenā navigācija">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#about">About</a></li>
+
+          <li class="has-dropdown">
+            <a href="#" id="services-btn" aria-haspopup="true" aria-expanded="false">Services ▾</a>
+            <ul class="dropdown" aria-label="Services sub-menu">
+              <li><a href="#">Grāmatu pievienošana</a></li>
+              <li><a href="#">Rezervēšana</a></li>
+              <li><a href="#">Apmainīšana</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#contact">Contact</a></li>
+          <li><button id="darkToggle" class="dark-btn" aria-label="Pārslēgt tumšo režīmu">🌙</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PIEVIENOTS: klase center-content -->
+  <main class="container layout center-content">
+    <section class="main-content">
+      <h2>Laipni lūgti Grāmatu apmaiņā</h2>
+      <p>Grāmatu apmaiņas sistēma. Šeit varēsi pievienot grāmatas, meklēt pēc kategorijām, rezervēt un pārvaldīt apmaiņas.</p>
+
+      <img src="images/books.jpg" alt="Grāmatu ilustrācija" class="hero-img" />
+
+      <section id="about" class="about">
+        <h3>Par projektu</h3>
+        <p>Šī vietne ir prototips, kas demonstrē galveno funkcionalitāti: lietotāju reģistrāciju, datu bāzes integrāciju, grāmatu pievienošanu un meklēšanas rīkus.</p>
+      </section>
+
+      <section class="cards-section">
+        <h3>Ieteiktās grāmatas</h3>
+        <div class="cards">
+          <div class="card">
+            <img src="images/gramata1.jpg" alt="Grāmata 1">
+            <h4>A Court of Thorns and Roses</h4>
+            <p>Īss grāmatas apraksts.</p>
+            <button class="card-btn"
+                    data-title="A Court of Thorns and Roses"
+                    data-desc="Fantāzijas romāns ar spraigu sižetu un vēsturisku noskaņu."
+                    data-img="images/gramata1.jpg">Uzzināt vairāk</button>
+          </div>
+
+          <div class="card">
+            <img src="images/gramata2.jpg" alt="Grāmata 2">
+            <h4>Harry Potter and the Sorcerer's Stone</h4>
+            <p>Interesants ievads par grāmatu vai autoru.</p>
+            <button class="card-btn"
+                    data-title="Harry Potter and the Sorcerer's Stone"
+                    data-desc="Sākums četrarpus sērijai, kas iemieso burvju pasauli."
+                    data-img="images/gramata2.jpg">Uzzināt vairāk</button>
+          </div>
+
+          <div class="card">
+            <img src="images/gramata3.jpg" alt="Grāmata 3">
+            <h4>Hunger Games: Catching Fire</h4>
+            <p>Īss apraksts, kas motivē paņemt šo grāmatu.</p>
+            <button class="card-btn"
+                    data-title="Hunger Games: Catching Fire"
+                    data-desc="Turpinājums spraigajā distopiskajā triloģijā."
+                    data-img="images/gramata3.jpg">Uzzināt vairāk</button>
+          </div>
+
+          <div class="card">
+            <img src="images/gramata4.jpg" alt="Grāmata 4">
+            <h4>Book of Ra Magic</h4>
+            <p>Mistērija un piedzīvojums.</p>
+            <button class="card-btn"
+                    data-title="Book of Ra Magic"
+                    data-desc="Klasisks piedzīvojuma stāsts ar noslēpumu."
+                    data-img="images/gramata4.jpg">Uzzināt vairāk</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <aside class="sidebar" role="complementary">
+      <h3>Populārākās kategorijas</h3>
+      <ul>
+        <li>Fantastika</li>
+        <li>Vēsture</li>
+        <li>Pašizaugsme</li>
+        <li>Romāni</li>
+      </ul>
+
+      <div class="related">
+        <h4>Saistītie raksti</h4>
+        <ul>
+          <li><a href="#">Kā organizēt grāmatu apmaiņu</a></li>
+          <li><a href="#">Padomi lasīšanas kopienai</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© 2025 Grāmatu apmaiņas sistēma</p>
+      <p class="social">Seko mums: <a href="#">Facebook</a> | <a href="#">Instagram</a></p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="close" aria-label="Aizvērt modal">&times;</button>
+      <img id="modal-img" src="" alt="" />
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

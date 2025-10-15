@@ -1,0 +1,517 @@
+/* ===== Pamata resets ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    color: #222;
+    line-height: 1.45;
+    background: #ffffff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Konteiners */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== Header ===== */
+.site-header {
+    background: #2b2b2b;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.site-title {
+    text-align: center;
+    padding-left: 120px;
+    font-size: 1.4rem;
+}
+
+/* ===== Navigācija ===== */
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.main-nav li {
+    position: relative;
+}
+
+.main-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 6px 8px;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.main-nav a:hover {
+    background: #444;
+    border-radius: 4px;
+}
+
+/* ===== DROPDOWN ===== */
+.has-dropdown {
+    position: relative;
+  }
+  
+  /* Dropdown sākotnēji paslēpts */
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #2b2b2b;
+    list-style: none;
+    padding: 8px 0;
+    margin: 0;
+    min-width: 180px;
+    border-radius: 4px;
+    z-index: 999;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+  
+  /* Dropdown redzams tikai tad, kad vecākam ir klase .active */
+  .has-dropdown.active .dropdown {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Dropdown linki */
+  .dropdown li {
+    display: block;
+    width: 100%;
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 10px 14px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .dropdown a:hover {
+    background: #444;
+  }
+  
+  /* ===== HAMBURGER MENU ===== */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+  }
+  
+  /* ===== MOBILĀ NAVIGĀCIJA ===== */
+  @media (max-width: 800px) {
+    .main-nav {
+      position: relative;
+    }
+  
+    .main-nav ul {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      background: #2b2b2b;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      border-radius: 4px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
+  
+    .main-nav ul.show {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: flex;
+    }
+  
+    .main-nav li {
+      width: 100%;
+    }
+  
+    .main-nav a {
+      display: block;
+      width: 100%;
+      padding: 12px;
+    }
+  
+    /* Mobilajā režīmā dropdown atveras zem "Services" */
+    .has-dropdown .dropdown {
+      position: static;
+      background: #1e1e1e;
+      opacity: 1;
+      transform: none;
+      box-shadow: none;
+      border-radius: 0;
+      padding-left: 10px;
+    }
+  
+    .has-dropdown.active .dropdown {
+      display: block;
+    }
+  }
+  
+
+/* ===== Layout: main + aside ===== */
+.layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 28px 0;
+}
+
+.main-content {
+    flex: 1 1 0;
+}
+
+.main-content h2 {
+    margin-top: 0;
+}
+
+.hero-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 14px 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Sānu josla */
+.sidebar {
+    width: 260px;
+    background: #f7f7f7;
+    padding: 14px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+.sidebar h3,
+.sidebar h4 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    padding-left: 1.05rem;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+    background: #1b1b1b;
+    color: #ddd;
+    padding: 14px 0;
+    margin-top: 60px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.site-footer a {
+    color: #d9d9d9;
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+    }
+
+    .header-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+/* ====== Card sekcija ====== */
+.cards-section {
+    margin: 40px 0;
+}
+
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 16px;
+    width: 255px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.card img {
+    width: 80%;
+    border-radius: 10px;
+    margin-bottom: 6px;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: floatUp 0.6s ease forwards;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-10px) scale(1.03);
+    }
+}
+
+.card-btn {
+    background: linear-gradient(45deg, #2b2b2b, #555);
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    margin-top: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.card-btn:hover {
+    background: linear-gradient(45deg, #444, #666);
+    transform: scale(1.05);
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+}
+
+.modal .close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ===== Dark mode ===== */
+body.dark {
+    background: #121212;
+    color: #eee;
+}
+
+body.dark .site-header {
+    background: #1b1b1b;
+}
+
+body.dark .main-nav a {
+    color: #eee;
+}
+
+body.dark .main-nav a:hover {
+    background: #333;
+}
+
+body.dark .sidebar {
+    background: #222;
+    color: #eee;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+    color: #eee;
+}
+
+body.dark .card-btn {
+    background: linear-gradient(45deg, #333, #666);
+}
+
+body.dark .modal-content {
+    background: #1e1e1e;
+    color: #eee;
+}
+
+/* ===== Centrs tikai galvenajam saturam ===== */
+.center-content {
+    text-align: center;
+}
+
+.center-content .cards,
+.center-content .card {
+    justify-content: center;
+    text-align: center;
+}
+
+.center-content .main-content img,
+.center-content .main-content p,
+.center-content .main-content h2,
+.center-content .main-content h3 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center-content .sidebar {
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .center-content {
+        text-align: center;
+    }
+
+    .center-content .layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .center-content .sidebar {
+        width: 100%;
+        text-align: center;
+    }
+
+    .center-content .cards {
+        justify-content: center;
+    }
+}
+
+/* ===== MODAL POPUP ===== */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+  }
+  
+  .modal.open {
+    display: flex;
+  }
+  
+  .modal-content {
+    background: #fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: popupFade 0.3s ease;
+    position: relative;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+  }
+  
+  .modal-content .close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #444;
+  }
+  
+  .modal-content .close:hover {
+    color: red;
+  }
+  
+  @keyframes popupFade {
+    from {
+      transform: translateY(-15px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
