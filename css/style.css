@@ -71,10 +71,9 @@ body {
 /* ===== DROPDOWN ===== */
 .has-dropdown {
     position: relative;
-  }
-  
-  /* Dropdown sākotnēji paslēpts */
-  .dropdown {
+}
+
+.dropdown {
     display: none;
     position: absolute;
     top: 100%;
@@ -89,53 +88,51 @@ body {
     opacity: 0;
     transform: translateY(-5px);
     transition: opacity 0.2s ease, transform 0.2s ease;
-  }
-  
-  /* Dropdown redzams tikai tad, kad vecākam ir klase .active */
-  .has-dropdown.active .dropdown {
+}
+
+.has-dropdown.active .dropdown {
     display: block;
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  /* Dropdown linki */
-  .dropdown li {
+}
+
+.dropdown li {
     display: block;
     width: 100%;
-  }
-  
-  .dropdown a {
+}
+
+.dropdown a {
     display: block;
     padding: 10px 14px;
     color: #fff;
     text-decoration: none;
-  }
-  
-  .dropdown a:hover {
+}
+
+.dropdown a:hover {
     background: #444;
-  }
-  
-  /* ===== HAMBURGER MENU ===== */
-  .hamburger {
+}
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
-  }
-  
-  .hamburger span {
+}
+
+.hamburger span {
     width: 25px;
     height: 3px;
     background: #fff;
     border-radius: 2px;
-  }
-  
-  /* ===== MOBILĀ NAVIGĀCIJA ===== */
-  @media (max-width: 800px) {
+}
+
+/* ===== MOBILĀ NAVIGĀCIJA ===== */
+@media (max-width: 800px) {
     .main-nav {
       position: relative;
     }
-  
+
     .main-nav ul {
       display: none;
       flex-direction: column;
@@ -149,26 +146,25 @@ body {
       padding: 10px 0;
       z-index: 1000;
     }
-  
+
     .main-nav ul.show {
       display: flex;
     }
-  
+
     .hamburger {
       display: flex;
     }
-  
+
     .main-nav li {
       width: 100%;
     }
-  
+
     .main-nav a {
       display: block;
       width: 100%;
       padding: 12px;
     }
-  
-    /* Mobilajā režīmā dropdown atveras zem "Services" */
+
     .has-dropdown .dropdown {
       position: static;
       background: #1e1e1e;
@@ -178,12 +174,11 @@ body {
       border-radius: 0;
       padding-left: 10px;
     }
-  
+
     .has-dropdown.active .dropdown {
       display: block;
     }
-  }
-  
+}
 
 /* ===== Layout: main + aside ===== */
 .layout {
@@ -195,10 +190,6 @@ body {
 
 .main-content {
     flex: 1 1 0;
-}
-
-.main-content h2 {
-    margin-top: 0;
 }
 
 .hero-img {
@@ -461,13 +452,13 @@ body.dark .modal-content {
     justify-content: center;
     align-items: center;
     z-index: 2000;
-  }
+}
   
-  .modal.open {
+.modal.open {
     display: flex;
-  }
+}
   
-  .modal-content {
+.modal-content {
     background: #fff;
     color: #000;
     padding: 20px;
@@ -477,19 +468,15 @@ body.dark .modal-content {
     text-align: center;
     animation: popupFade 0.3s ease;
     position: relative;
-  }
+}
   
-  .modal-content img {
+.modal-content img {
     width: 100%;
     border-radius: 6px;
     margin-bottom: 10px;
-  }
+}
   
-  .modal-content h3 {
-    margin-top: 0;
-  }
-  
-  .modal-content .close {
+.modal-content .close {
     position: absolute;
     top: 8px;
     right: 10px;
@@ -498,13 +485,13 @@ body.dark .modal-content {
     font-size: 24px;
     cursor: pointer;
     color: #444;
-  }
+}
   
-  .modal-content .close:hover {
+.modal-content .close:hover {
     color: red;
-  }
+}
   
-  @keyframes popupFade {
+@keyframes popupFade {
     from {
       transform: translateY(-15px);
       opacity: 0;
@@ -513,5 +500,118 @@ body.dark .modal-content {
       transform: translateY(0);
       opacity: 1;
     }
+}
+
+/* ===== Meklēšanas lauks ===== */
+.search-bar {
+  text-align: center;
+  margin: 20px 0;
+}
+
+#search {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  width: 60%;
+  max-width: 400px;
+  font-size: 1rem;
+}
+
+/* ===== Kontaktforma ===== */
+.contact-section {
+  margin: 40px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  border-color: #555;
+  outline: none;
+}
+
+#contact-form button {
+  background: #2b2b2b;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+  background: #444;
+}
+
+.form-message {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.form-message.error {
+  color: red;
+  animation: shake 0.3s ease;
+}
+
+.form-message.success {
+  color: green;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-4px); }
+  75% { transform: translateX(4px); }
+}
+
+/* ===== Nosūtīto ziņojumu sadaļa ===== */
+#show-messages-btn {
+    margin-top: 10px;
+    background: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  #show-messages-btn:hover {
+    background: #333;
+  }
+  
+  .sent-messages {
+    margin-top: 20px;
+    background: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  
+  .sent-messages ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .sent-messages li {
+    background: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    border-left: 4px solid #2b2b2b;
   }
   
